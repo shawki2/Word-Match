@@ -39,7 +39,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="match-quiz text-center">
+      <div className="match-quiz">
         <h1>Match the words to the numbers</h1>
         <h3>
           Click the word and then the number. Match all the pairs to continue.
@@ -119,7 +119,11 @@ class App extends Component {
             1
           </li>
         </ul>
-        {this.state.count === 10 ? <div className="response">Correct</div> : ""}
+        {this.state.count === 10 ? (
+          <div className="response">Congratulation!</div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }
