@@ -24,7 +24,7 @@ In this task, the user interface is specified and built using ReactJS. Textual/N
 
 ## Future improvements
 
-I'd like to keep expanding this project to hone my existing skills, as well as to explore new technologies. Improve UI for better user experience and the users can able to change the word if they would like before choosing a number.
+I'd like to keep expanding this project to hone my existing skills, as well as to explore new technologies. Improve UI for better user experience and the users can be able to change the word if they would like before choosing a number.
 
 
 ## Licence
