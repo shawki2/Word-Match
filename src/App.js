@@ -20,7 +20,7 @@ class App extends Component {
     };
   }
 
-  onClick = (word, e) => {
+  onClickWord = (word, e) => {
     if (this.state[word] !== "matched" && this.state.count % 2 === 0) {
       const count = this.state.count + 1;
       this.setState({ [word]: "matched", dataset: e.target.dataset.id, count });
@@ -28,7 +28,10 @@ class App extends Component {
   };
 
   onClickNumber = (number, e) => {
-    if (this.state.dataset === e.target.dataset.id) {
+    if (
+      this.state.dataset === e.target.dataset.id &&
+      this.state.count % 2 !== 0
+    ) {
       const count = this.state.count + 1;
       this.setState({
         [number]: "matched",
@@ -47,35 +50,35 @@ class App extends Component {
         <ul className="wordslist1">
           <li
             data-id="2"
-            onClick={e => this.onClick("two", e)}
+            onClick={e => this.onClickWord("two", e)}
             className={this.state.two}
           >
             Two
           </li>
           <li
             data-id="5"
-            onClick={e => this.onClick("five", e)}
+            onClick={e => this.onClickWord("five", e)}
             className={this.state.five}
           >
             Five
           </li>
           <li
             data-id="4"
-            onClick={e => this.onClick("four", e)}
+            onClick={e => this.onClickWord("four", e)}
             className={this.state.four}
           >
             Four
           </li>
           <li
             data-id="1"
-            onClick={e => this.onClick("one", e)}
+            onClick={e => this.onClickWord("one", e)}
             className={this.state.one}
           >
             One
           </li>
           <li
             data-id="3"
-            onClick={e => this.onClick("three", e)}
+            onClick={e => this.onClickWord("three", e)}
             className={this.state.three}
           >
             Three
@@ -120,7 +123,7 @@ class App extends Component {
           </li>
         </ul>
         {this.state.count === 10 ? (
-          <div className="response">Congratulation!</div>
+          <div className="response">congratulations!</div>
         ) : (
           ""
         )}
